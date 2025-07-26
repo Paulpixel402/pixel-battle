@@ -1,33 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pixel Battle</title>
-  <style>
-    body {
-      margin: 0;
-      background: linear-gradient(270deg, #000000, #0f0f0f, #1a1a1a);
-      background-size: 600% 600%;
-      animation: BackgroundAnimation 30s ease infinite;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: white;
-      font-family: monospace;
-      font-size: 3rem;
-    }
-
-    @keyframes BackgroundAnimation {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pixel Battle</title>
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  🔥 La bataille commence
+<div class="background">
+<div class="glow"></div>
+<h1 class="main-title">La bataille commence</h1>
+<div class="switch-light"></div>
+<button class="enter-button">Entrer</button>
+</div>
 </body>
 </html>
 
