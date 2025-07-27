@@ -1,78 +1,66 @@
 body {
 margin: 0;
 padding: 0;
-font-family: 'Press Start 2P', cursive;
-background: linear-gradient(to bottom, #88c0f0, #3a7bd5);
-color: #fff;
-image-rendering: pixelated;
-}
-
-.container {
-display: flex;
+font-family: 'Press Start 2P', monospace;
+background: linear-gradient(to bottom, #001c66, #3fbbff);
 height: 100vh;
-width: 100%;
+overflow: hidden;
+display: flex;
 }
 
 .sidebar {
-width: 220px;
-background-color: #1a1a2e;
+width: 200px;
+background: #111;
+color: white;
 padding: 20px;
-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+box-shadow: 2px 0 5px rgba(0,0,0,0.4);
 }
 
 .sidebar h1 {
-font-size: 18px;
+font-size: 14px;
 margin-bottom: 20px;
-color: #ffffff;
 }
 
-.menu {
+.sidebar ul {
 list-style: none;
 padding: 0;
 }
 
-.menu li {
-margin-bottom: 12px;
+.sidebar ul li {
+margin: 10px 0;
 cursor: pointer;
-font-size: 12px;
-transition: color 0.2s ease;
 }
 
-.menu li:hover {
-color: #00ffcc;
-}
-
-.main-content {
+.island-scene {
 flex: 1;
 display: flex;
-justify-content: center;
 align-items: center;
+justify-content: center;
 position: relative;
-overflow: hidden;
 }
 
 .island {
 width: 300px;
-height: 180px;
-background-color: #4CAF50;
+height: 200px;
+background: green;
 border-radius: 50%;
 position: relative;
-box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+box-shadow: inset 0 0 20px #005500;
 }
 
-.sprite {
+.cabane, .chat {
 position: absolute;
 width: 48px;
-height: 48px;
 image-rendering: pixelated;
 }
 
-.cabin {
+.cabane {
 top: 40px;
-left: 40px;
+left: 60px;
 }
 
-.cat {
-bottom: 20px;
-right: 50px;
+.chat {
+bottom: 40px;
+right: 60px;
 }
+
