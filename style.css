@@ -1,80 +1,78 @@
-* {
+body {
 margin: 0;
 padding: 0;
-box-sizing: border-box;
-}
-
-body {
-font-family: monospace;
-background: linear-gradient(to bottom, #6ec5ff, #1a73e8);
-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
+font-family: 'Press Start 2P', cursive;
+background: linear-gradient(to bottom, #88c0f0, #3a7bd5);
+color: #fff;
+image-rendering: pixelated;
 }
 
 .container {
 display: flex;
+height: 100vh;
 width: 100%;
-height: 100%;
 }
 
 .sidebar {
-background-color: #1f1f1f;
-color: white;
-padding: 20px;
 width: 220px;
-display: flex;
-flex-direction: column;
-gap: 10px;
+background-color: #1a1a2e;
+padding: 20px;
+box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.sidebar h2 {
+.sidebar h1 {
+font-size: 18px;
 margin-bottom: 20px;
+color: #ffffff;
 }
 
-.sidebar ul {
+.menu {
 list-style: none;
+padding: 0;
 }
 
-.sidebar ul li {
-margin: 10px 0;
+.menu li {
+margin-bottom: 12px;
 cursor: pointer;
+font-size: 12px;
+transition: color 0.2s ease;
+}
+
+.menu li:hover {
+color: #00ffcc;
 }
 
 .main-content {
 flex: 1;
 display: flex;
-align-items: center;
 justify-content: center;
+align-items: center;
 position: relative;
+overflow: hidden;
 }
 
 .island {
-width: 200px;
-height: 120px;
-background-color: #3cad3c;
+width: 300px;
+height: 180px;
+background-color: #4CAF50;
 border-radius: 50%;
 position: relative;
-box-shadow: 0 0 10px #0006;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.sprite {
+position: absolute;
+width: 48px;
+height: 48px;
+image-rendering: pixelated;
 }
 
 .cabin {
-width: 30px;
-height: 30px;
-background-color: #804000;
-position: absolute;
 top: 40px;
-left: 50px;
-border: 2px solid #000;
+left: 40px;
 }
 
 .cat {
-width: 20px;
-height: 20px;
-background-color: #222;
-border-radius: 50%;
-position: absolute;
-bottom: 30px;
-right: 40px;
+bottom: 20px;
+right: 50px;
 }
