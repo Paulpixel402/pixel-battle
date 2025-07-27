@@ -1,18 +1,118 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pixel Battle</title>
-<link rel="stylesheet" href="style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pixel Interface</title>
+<style>
+body {
+margin: 0;
+overflow: hidden;
+background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+canvas {
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.lamp {
+position: absolute;
+top: 50px;
+left: 50%;
+transform: translateX(-50%);
+width: 20px;
+height: 80px;
+background: #555;
+box-shadow: 0 0 20px 5px rgba(255, 255, 200, 0.4);
+border-radius: 10px;
+}
+
+.lamp::after {
+content: '';
+position: absolute;
+bottom: -20px;
+left: 50%;
+transform: translateX(-50%);
+width: 100px;
+height: 100px;
+background: radial-gradient(ellipse at center, rgba(255,255,200,0.3), transparent 80%);
+border-radius: 50%;
+z-index: -1;
+}
+</style>
 </head>
 <body>
-<div class="background">
-<div class="glow"></div>
-<h1 class="main-title">La bataille commence</h1>
-<div class="switch-light"></div>
-<button class="enter-button">Entrer</button>
-</div>
+
+<div class="lamp"></div>
+<canvas id="canvas"></canvas>
+
+<script>
+// Canvas & eau ondulante
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let w, h;
+
+function resize() {
+w = canvas.width = window.innerWidth;
+h = canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+// Oiseaux
+const birds = Array.from({ length: 3 }, () => ({
+x: Math.random() * w,
+y: Math.random() * h * 0.4,
+speed: 0.5 + Math.random(),
+size: 5 + Math.random() * 5,
+}));
+
+// Eau
+let t = 0;
+function draw() {
+ctx.clearRect(0, 0, w, h);
+
+// Ciel sombre
+ctx.fillStyle = '#0a0c10';
+ctx.fillRect(0, 0, w, h);
+
+// Eau
+ctx.beginPath();
+for (let x = 0; x <= w; x++) {
+let y = Math.sin(x * 0.01 + t) * 4 + h * 0.75;
+if (x === 0) ctx.moveTo(x, y);
+else ctx.lineTo(x, y);
+}
+ctx.lineTo(w, h);
+ctx.lineTo(0, h);
+ctx.closePath();
+ctx.fillStyle = '#1a2a40';
+ctx.fill();
+
+// Oiseaux (triangles en vol)
+birds.forEach(b => {
+b.x += b.speed;
+if (b.x > w + 50) {
+b.x = -50;
+b.y = Math.random() * h * 0.4;
+}
+ctx.beginPath();
+ctx.moveTo(b.x, b.y);
+ctx.lineTo(b.x - b.size, b.y + b.size);
+ctx.lineTo(b.x + b.size, b.y + b.size);
+ctx.closePath();
+ctx.fillStyle = '#cccccc';
+ctx.fill();
+});
+
+t += 0.02;
+requestAnimationFrame(draw);
+}
+
+draw();
+</script>
+
 </body>
 </html>
-
