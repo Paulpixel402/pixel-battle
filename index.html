@@ -1,79 +1,30 @@
-body {
-margin: 0;
-padding: 0;
-font-family: 'Press Start 2P', cursive;
-background: linear-gradient(to bottom, #88c0f0, #3a7bd5);
-color: #fff;
-image-rendering: pixelated;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pixel Battle</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="container">
+<aside class="sidebar">
+<h1>Pixel Battle</h1>
+<ul class="menu">
+<li>Accueil</li>
+<li>Envoyer des pixels</li>
+<li>Rejoindre une bataille</li>
+<li>Bataille mensuelle</li>
+<li>Les grandes batailles</li>
+</ul>
+</aside>
 
-.container {
-display: flex;
-height: 100vh;
-width: 100%;
-}
-
-.sidebar {
-width: 220px;
-background-color: #1a1a2e;
-padding: 20px;
-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.sidebar h1 {
-font-size: 18px;
-margin-bottom: 20px;
-color: #ffffff;
-}
-
-.menu {
-list-style: none;
-padding: 0;
-}
-
-.menu li {
-margin-bottom: 12px;
-cursor: pointer;
-font-size: 12px;
-transition: color 0.2s ease;
-}
-
-.menu li:hover {
-color: #00ffcc;
-}
-
-.main-content {
-flex: 1;
-display: flex;
-justify-content: center;
-align-items: center;
-position: relative;
-overflow: hidden;
-}
-
-.island {
-width: 300px;
-height: 180px;
-background-color: #4CAF50;
-border-radius: 50%;
-position: relative;
-box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-}
-
-.sprite {
-position: absolute;
-width: 48px;
-height: 48px;
-image-rendering: pixelated;
-}
-
-.cabin {
-top: 40px;
-left: 40px;
-}
-
-.cat {
-bottom: 20px;
-right: 50px;
-}
-
+<main class="main-content">
+<div class="island">
+<img src="cabane.png" alt="Cabane" class="sprite cabin" />
+<img src="chat.png" alt="Chat" class="sprite cat" />
+</div>
+</main>
+</div>
+</body>
+</html>
